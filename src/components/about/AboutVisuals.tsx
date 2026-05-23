@@ -143,20 +143,23 @@ export function AtAGlanceVisual() {
           </p>
         </div>
 
-        <div className="flex shrink-0 flex-col items-center justify-center px-2">
-          <svg width="48" height="140" viewBox="0 0 48 140" aria-hidden>
+        <div className="relative flex w-12 shrink-0 items-center justify-center self-stretch py-2">
+          <svg
+            className="h-full min-h-[140px] w-12"
+            viewBox="0 0 48 156"
+            preserveAspectRatio="xMidYMid meet"
+            aria-hidden
+          >
             <path
-              d="M24 12 V128"
+              d="M24 18 V138"
               stroke="#60A5FA"
               strokeDasharray="3 7"
               opacity="0.46"
             />
-            <circle cx="24" cy="20" r="5" fill="#2563EB" />
-            <circle cx="24" cy="70" r="5" fill="#22C55E" />
-            <circle cx="24" cy="120" r="5" fill="#2563EB" opacity="0.74" />
-            <path d="M24 70 H12" stroke="#22C55E" strokeWidth="1.2" opacity="0.68" />
+            <circle cx="24" cy="24" r="5" fill="#2563EB" />
+            <circle cx="24" cy="132" r="5" fill="#2563EB" opacity="0.74" />
           </svg>
-          <span className="-mt-16 rounded-full border border-blue-400/45 bg-blue-500/25 px-2.5 py-1 font-mono text-[10px] text-blue-100">
+          <span className="absolute left-1 top-1/2 flex h-[22px] w-10 -translate-y-1/2 items-center justify-center rounded-full border border-blue-400/45 bg-blue-500/25 font-mono text-[10px] text-blue-100">
             sync
           </span>
         </div>
