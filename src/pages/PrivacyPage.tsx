@@ -1,8 +1,8 @@
 /**
  * Privacy policy for FROSTR open-source apps (no FROSTR-operated servers or user data).
  */
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { ProseLane } from '@/components/layout/ProseLane';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import {
   PRIVACY_EFFECTIVE_DATE,
   PRIVACY_SECTIONS,
@@ -47,18 +47,20 @@ function PrivacySectionBlock({ section }: { section: PrivacySection }) {
 
 export function PrivacyPage() {
   return (
-    <ProseLane>
-      <Card>
-        <CardHeader className="space-y-2 border-b border-blue-900/20 pb-4">
+    <Card>
+      <CardHeader className="space-y-2 border-b border-blue-900/20 pb-4">
+        <ProseLane>
           <CardTitle className="font-sans text-2xl font-semibold text-slate-200">
             Privacy Policy
           </CardTitle>
           <p className="igloo-small text-slate-500">
             Effective date: {PRIVACY_EFFECTIVE_DATE}
           </p>
-        </CardHeader>
+        </ProseLane>
+      </CardHeader>
 
-        <CardContent className="space-y-6 pt-6">
+      <CardContent className="space-y-6 pt-6">
+        <ProseLane>
           <div className="rounded-lg border border-blue-900/30 bg-slate-900/50 p-4">
             <p className="igloo-body text-slate-300">
               <strong className="font-medium text-blue-200">In one sentence:</strong>{' '}
@@ -69,8 +71,8 @@ export function PrivacyPage() {
           {PRIVACY_SECTIONS.map((section) => (
             <PrivacySectionBlock key={section.id} section={section} />
           ))}
-        </CardContent>
-      </Card>
-    </ProseLane>
+        </ProseLane>
+      </CardContent>
+    </Card>
   );
 }

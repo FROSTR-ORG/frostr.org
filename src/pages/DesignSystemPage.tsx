@@ -13,19 +13,20 @@ import {
 } from '@/components/ui';
 import { GlossarySection } from '@/components/glossary/GlossarySection';
 import { GlossaryTerm } from '@/components/glossary/GlossaryTerm';
+import { ProseLane } from '@/components/layout/ProseLane';
 
 /**
  * Showcases Igloo UI tokens for side-by-side comparison with Paper.
  */
 export function DesignSystemPage() {
   return (
-    <div className="max-w-4xl space-y-10">
-      <div>
+    <div className="w-full space-y-10">
+      <ProseLane>
         <h1 className="igloo-h1">Design System</h1>
         <p className="igloo-body mt-2 text-slate-400">
           Igloo UI tokens from Paper — dev preview only.
         </p>
-      </div>
+      </ProseLane>
 
       <section className="space-y-4">
         <SectionLabel>Typography</SectionLabel>

@@ -29,10 +29,12 @@ export function AppsPage() {
       </ProseLane>
 
       <div className="space-y-8">
-        <div className="flex flex-wrap items-center gap-3">
-          <SectionLabel>FROSTR V2</SectionLabel>
-          <Badge variant="info">Current stack</Badge>
-        </div>
+        <ProseLane>
+          <div className="flex flex-wrap items-center gap-3">
+            <SectionLabel>FROSTR V2</SectionLabel>
+            <Badge variant="info">Current stack</Badge>
+          </div>
+        </ProseLane>
         <AppsSection
           label="Applications"
           description="Command-line, desktop, browser, and extension hosts for V2."
@@ -46,10 +48,12 @@ export function AppsPage() {
       </div>
 
       <div className="space-y-8 border-t border-slate-400/20 pt-10">
-        <div className="flex flex-wrap items-center gap-3">
-          <SectionLabel>FROSTR V1</SectionLabel>
-          <Badge variant="default">Production / legacy</Badge>
-        </div>
+        <ProseLane>
+          <div className="flex flex-wrap items-center gap-3">
+            <SectionLabel>FROSTR V1</SectionLabel>
+            <Badge variant="default">Production / legacy</Badge>
+          </div>
+        </ProseLane>
         <ProseLane>
           <p className="igloo-small -mt-4 text-slate-500">
             Prior Igloo apps and TypeScript libraries; many remain actively used in production.
@@ -69,7 +73,9 @@ export function AppsPage() {
 
       {demos.length > 0 && (
         <div className="space-y-8 border-t border-slate-400/20 pt-10">
-          <SectionLabel>Demos</SectionLabel>
+          <ProseLane>
+            <SectionLabel>Demos</SectionLabel>
+          </ProseLane>
           <ProseLane>
             <p className="igloo-small -mt-4 text-slate-500">
               Hosted web demos for exploring FROSTR nodes in the browser — V2 on the current stack,
