@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-mono: 'Share Tech Mono', ui-monospace, monospace;
+
+    --background: 222 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --popover: 222 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+
+    --card: 220 40% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --primary: 216 92% 60%;
+    --primary-foreground: 222 84% 5%;
+
+    --secondary: 221 40% 14%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 221 40% 14%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 352 83% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 152 76% 40%;
+    --success-foreground: 152 89% 96%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 38 100% 96%;
+
+    --ring: 216 92% 60%;
+
+    --radius: 0.75rem;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    @apply min-h-screen bg-gray-950 font-sans antialiased;
+    color: hsl(var(--foreground));
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+    background: #030712;
+  }
+}
+
+@layer components {
+  .surface-panel {
+    @apply border border-blue-900/20 bg-gray-900/40 backdrop-blur-sm;
+  }
+
+  .igloo-page-bg {
+    background:
+      linear-gradient(180deg, #030712 0%, #071126 38%, #132758 100%);
+  }
+
+  .surface-elevated {
+    @apply border border-blue-900/30 bg-slate-900/60 backdrop-blur-sm;
+  }
+
+  .igloo-card {
+    @apply rounded-lg border border-blue-900/30 bg-gray-900/40 shadow-lg backdrop-blur-sm;
+  }
+
+  .igloo-button {
+    @apply rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-blue-700;
+  }
+
+  .igloo-button-ghost {
+    @apply rounded-lg text-blue-400 transition-colors hover:bg-blue-900/30 hover:text-blue-300;
+  }
+
+  .igloo-text-primary {
+    @apply text-blue-300;
+  }
+
+  .igloo-text-secondary {
+    @apply text-blue-400;
+  }
+
+  .igloo-text-muted {
+    @apply text-slate-400;
+  }
+
+  .igloo-badge {
+    @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-medium ring-1 ring-inset;
+  }
+
+  .igloo-badge-default {
+    @apply bg-gray-500/20 text-gray-400 ring-gray-500/30;
+  }
+
+  .igloo-badge-success {
+    @apply bg-green-500/20 text-green-400 ring-green-500/30;
+  }
+
+  .igloo-badge-error {
+    @apply bg-red-500/20 text-red-400 ring-red-500/30;
+  }
+
+  .igloo-badge-warning {
+    @apply bg-yellow-500/20 text-yellow-400 ring-yellow-500/30;
+  }
+
+  .igloo-badge-info {
+    @apply bg-blue-500/20 text-blue-400 ring-blue-500/30;
+  }
+
+  .igloo-h1 {
+    font-family: var(--font-mono);
+    @apply text-[36px] font-normal leading-[44px] tracking-tight text-blue-300;
+  }
+
+  .igloo-h2 {
+    font-family: var(--font-mono);
+    @apply text-2xl font-normal text-blue-300;
+  }
+
+  .igloo-h3 {
+    font-family: var(--font-mono);
+    @apply text-xl font-normal text-slate-200;
+  }
+
+  .igloo-body {
+    @apply font-sans text-sm font-normal leading-relaxed text-blue-100;
+  }
+
+  .igloo-small {
+    @apply font-sans text-xs text-slate-400;
+  }
+
+  .igloo-section-label {
+    font-family: var(--font-mono);
+    @apply text-[13px] font-normal uppercase tracking-[0.08em] text-blue-300/80;
+  }
+
+  .igloo-mono-data {
+    @apply font-mono text-sm text-slate-200;
+  }
+
+  .igloo-code-inline {
+    @apply rounded bg-slate-900/60 px-1.5 py-0.5 font-mono text-[0.95em] text-blue-300;
+  }
+}
