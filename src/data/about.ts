@@ -149,8 +149,8 @@ export const ABOUT_CONTENT: AboutContent = {
     v2: {
       visualSlug: 'v2-apps',
       caption:
-        'V2 is the current bifrost-rs app stack: four hosts above shared Rust and UI/runtime libraries.',
-      groupLabel: 'FROSTR V2 — current',
+        'V2 is the current app stack: six planned hosts above Igloo UI/runtime packages and the bifrost-rs Rust core.',
+      groupLabel: 'FROSTR V2 — app lineup',
       apps: [
         {
           name: 'Igloo Shell',
@@ -169,6 +169,14 @@ export const ABOUT_CONTENT: AboutContent = {
         {
           name: 'Igloo Chrome',
           description: 'NIP-07 extension with FROSTR V2 threshold signing.',
+        },
+        {
+          name: 'Igloo Mobile for Android',
+          description: 'Planned Android host for mobile share custody and signing.',
+        },
+        {
+          name: 'Igloo Mobile for iOS',
+          description: 'Planned iOS host on the bifrost-rs V2 stack.',
         },
         {
           name: 'bifrost-rs',

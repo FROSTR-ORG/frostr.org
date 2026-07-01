@@ -16,11 +16,11 @@ function VisualFrame({ slug, children, className }: VisualFrameProps) {
     <div
       data-about-visual={slug}
       className={cn(
-        'w-full overflow-hidden rounded-xl border border-blue-500/30 bg-slate-950/40 p-5',
+        'about-visual-frame w-full overflow-hidden rounded-xl border border-blue-500/30 bg-slate-950/40 p-5',
         className,
       )}
     >
-      {children}
+      <div className="about-visual-zoom">{children}</div>
     </div>
   );
 }
@@ -41,7 +41,7 @@ function StatusBadge({
   return (
     <span
       className={cn(
-        'inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px]',
+        'inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] tabular-nums',
         styles[tone],
       )}
     >
@@ -71,7 +71,7 @@ function ShareRow({
   return (
     <div
       className={cn(
-        'flex items-center gap-2.5 rounded-lg border px-2.5 py-2.5',
+        'flex items-center gap-2.5 rounded-lg border px-2.5 py-2.5 tabular-nums',
         muted
           ? 'border-blue-500/20 border-dashed bg-slate-950/40'
           : 'border-blue-500/30 bg-slate-950/65',
@@ -110,7 +110,7 @@ function ShareRow({
 export function AtAGlanceVisual() {
   return (
     <VisualFrame slug="at-a-glance">
-      <div className="flex flex-col gap-4 lg:flex-row lg:items-stretch">
+      <div className="flex flex-col gap-4 md:flex-row md:items-stretch">
         <div className="flex-1 rounded-lg border border-blue-500/30 bg-slate-950/70 p-3.5">
           <div className="mb-3 flex items-center justify-between">
             <span className="font-mono text-[11px] uppercase tracking-[0.08em] text-blue-300">
@@ -143,9 +143,9 @@ export function AtAGlanceVisual() {
           </p>
         </div>
 
-        <div className="relative flex w-12 shrink-0 items-center justify-center self-stretch py-2">
+        <div className="relative flex w-12 shrink-0 items-center justify-center self-center py-1 md:self-stretch md:py-2">
           <svg
-            className="h-full min-h-[140px] w-12"
+            className="h-full min-h-[96px] w-12 md:min-h-[140px]"
             viewBox="0 0 48 156"
             preserveAspectRatio="xMidYMid meet"
             aria-hidden
@@ -159,7 +159,7 @@ export function AtAGlanceVisual() {
             <circle cx="24" cy="24" r="5" fill="#2563EB" />
             <circle cx="24" cy="132" r="5" fill="#2563EB" opacity="0.74" />
           </svg>
-          <span className="absolute left-1 top-1/2 flex h-[22px] w-10 -translate-y-1/2 items-center justify-center rounded-full border border-blue-400/45 bg-blue-500/25 font-mono text-[10px] text-blue-100">
+          <span className="absolute left-1/2 top-1/2 flex h-[22px] w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-blue-400/45 bg-blue-500/25 font-mono text-[10px] text-blue-100">
             sync
           </span>
         </div>
@@ -461,20 +461,22 @@ export function V2AppsVisual() {
     ['Igloo Home', 'desktop signer'],
     ['Igloo PWA', 'browser node'],
     ['Igloo Chrome', 'NIP-07 extension'],
+    ['Igloo Mobile for Android', 'mobile host'],
+    ['Igloo Mobile for iOS', 'mobile host'],
   ];
 
   return (
     <VisualFrame slug="v2-apps">
       <div className="mb-4 flex items-center justify-between">
         <span className="font-mono text-[11px] uppercase tracking-[0.08em] text-blue-200">
-          FROSTR V2 — current apps
+          FROSTR V2 — app lineup
         </span>
-        <StatusBadge>4 hosts</StatusBadge>
+        <StatusBadge>6 hosts</StatusBadge>
       </div>
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {apps.map(([title, meta]) => (
           <div
-            key={title}
+            key={`${title}-${meta}`}
             className="rounded-lg border border-blue-500/35 bg-slate-900/70 p-3"
           >
             <div className="font-mono text-xs text-slate-100">{title}</div>
@@ -482,13 +484,7 @@ export function V2AppsVisual() {
           </div>
         ))}
       </div>
-      <div className="mt-4 rounded-lg border border-blue-500/30 bg-blue-500/15 p-3">
-        <div className="font-mono text-xs text-blue-200">bifrost-rs</div>
-        <p className="mt-1 text-[11px] text-slate-400">
-          shared Rust runtime for V2 signing, routing, bridge, codec, and host workflows
-        </p>
-      </div>
-      <div className="mt-3 grid gap-3 sm:grid-cols-2">
+      <div className="mt-4 grid gap-3 sm:grid-cols-2">
         {[
           ['igloo-shared', 'browser adapters'],
           ['igloo-ui', 'Paper-aligned UI'],
@@ -501,6 +497,12 @@ export function V2AppsVisual() {
             <div className="text-[11px] text-slate-400">{meta}</div>
           </div>
         ))}
+      </div>
+      <div className="mt-3 rounded-lg border border-blue-500/30 bg-blue-500/15 p-3">
+        <div className="font-mono text-xs text-blue-200">bifrost-rs</div>
+        <p className="mt-1 text-[11px] text-slate-400">
+          shared Rust runtime for V2 signing, routing, bridge, codec, and host workflows
+        </p>
       </div>
     </VisualFrame>
   );

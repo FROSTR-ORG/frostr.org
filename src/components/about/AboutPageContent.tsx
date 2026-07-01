@@ -13,7 +13,7 @@ function AppRows({ apps }: { apps: { name: string; description: string }[] }) {
   return (
     <div className="mt-5 space-y-3">
       {apps.map((app) => (
-        <div key={app.name} className="grid gap-2 sm:grid-cols-[132px_1fr]">
+        <div key={app.name} className="grid gap-2 sm:grid-cols-[188px_1fr]">
           <div className="font-mono text-[13px] leading-4 text-blue-300">
             {app.name}
           </div>

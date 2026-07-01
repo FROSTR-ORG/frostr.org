@@ -21,7 +21,8 @@ export function AppsPage() {
           <h1 className="igloo-h1">Applications</h1>
           <p className="igloo-body text-slate-400">
             <strong className="font-medium text-blue-300">FROSTR V2</strong> is the current
-            protocol and host stack (Rust bifrost, shell, PWA, Chrome, and desktop hosts).{' '}
+            protocol and host stack. The core V2 libraries are released; Igloo PWA, Shell, Home,
+            Chrome, Android, and iOS hosts are staged as coming soon.{' '}
             <strong className="font-medium text-slate-300">FROSTR V1</strong> apps and libraries
             remain in use for existing deployments.
           </p>
@@ -33,16 +34,18 @@ export function AppsPage() {
           <div className="flex flex-wrap items-center gap-3">
             <SectionLabel>FROSTR V2</SectionLabel>
             <Badge variant="info">Current stack</Badge>
+            <Badge variant="success">Libraries released</Badge>
+            <Badge variant="warning">Apps coming soon</Badge>
           </div>
         </ProseLane>
         <AppsSection
           label="Applications"
-          description="Command-line, desktop, browser, and extension hosts for V2."
+          description="PWA, Shell, Home, Chrome, Android, and iOS hosts are planned for the V2 app lineup."
           items={v2Apps}
         />
         <AppsSection
           label="Libraries"
-          description="Shared runtime, UI, and Rust core used by V2 hosts."
+          description="Released Rust core, shared runtime, and UI packages used by V2 hosts."
           items={v2Libraries}
         />
       </div>

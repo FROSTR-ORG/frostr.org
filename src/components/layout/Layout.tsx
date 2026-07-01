@@ -28,7 +28,7 @@ export function Layout({ error }: LayoutProps) {
   return (
     <div className="igloo-page-bg relative min-h-screen overflow-hidden">
       <div className="relative mx-auto max-w-7xl space-y-8 p-6 md:p-8 max-md:p-2">
-        <header className="surface-elevated flex flex-col gap-4 rounded-xl px-5 py-3.5 md:flex-row md:items-center md:justify-between">
+        <header className="surface-elevated flex flex-col gap-4 rounded-xl px-5 py-3.5 lg:flex-row lg:items-center lg:justify-between">
           <NavLink to="/" className="flex items-center gap-3">
             <img
               src="/frostr-logo-transparent.png"
@@ -45,7 +45,7 @@ export function Layout({ error }: LayoutProps) {
             </div>
           </NavLink>
 
-          <nav className="hidden items-center gap-1 md:flex" aria-label="Main">
+          <nav className="hidden items-center gap-1 lg:flex" aria-label="Main">
             {navItems.map((item) => (
               <SiteNavLink
                 key={item.to}
@@ -69,7 +69,7 @@ export function Layout({ error }: LayoutProps) {
 
             <button
               type="button"
-              className="ml-4 text-blue-400 transition-colors hover:text-blue-300 md:hidden"
+              className="ml-4 text-blue-400 transition-colors hover:text-blue-300 lg:hidden"
               aria-expanded={mobileMenuOpen}
               aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
               onClick={() => setMobileMenuOpen((open) => !open)}
@@ -85,7 +85,7 @@ export function Layout({ error }: LayoutProps) {
 
         {mobileMenuOpen && (
           <nav
-            className="absolute left-2 right-2 z-50 mt-2 rounded-lg border border-blue-900/20 bg-slate-900/80 p-4 shadow-lg backdrop-blur-lg md:hidden"
+            className="absolute left-2 right-2 z-50 mt-2 rounded-lg border border-blue-900/20 bg-slate-900/80 p-4 shadow-lg backdrop-blur-lg lg:hidden"
             aria-label="Mobile"
           >
             <div className="flex flex-col space-y-1">

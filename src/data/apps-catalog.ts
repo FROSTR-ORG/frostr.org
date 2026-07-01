@@ -9,6 +9,8 @@ export type AppVersion = 'v1' | 'v2';
 
 export type AppCategory = 'app' | 'library' | 'demo';
 
+export type AppReleaseStatus = 'released' | 'comingSoon';
+
 export type CatalogItemType =
   | 'Mobile App'
   | 'Desktop App'
@@ -40,6 +42,7 @@ export type CatalogItem = {
   type: CatalogItemType;
   links: CatalogLink[];
   icon: CatalogIconName;
+  releaseStatus?: AppReleaseStatus;
   highlighted?: boolean;
 };
 
@@ -52,6 +55,20 @@ export type CatalogFilter = {
 export const APP_CATALOG: CatalogItem[] = [
   // --- V2 Applications ---
   {
+    id: 'igloo-pwa',
+    title: 'Igloo PWA',
+    description:
+      'Planned browser app for running a FROSTR V2 node and managing shares and keysets.',
+    version: 'v2',
+    category: 'app',
+    type: 'Web App',
+    icon: 'globe',
+    releaseStatus: 'comingSoon',
+    links: [
+      { label: 'View on GitHub', url: `${GITHUB_ORG}/igloo-pwa` },
+    ],
+  },
+  {
     id: 'igloo-shell',
     title: 'Igloo Shell',
     description:
@@ -60,6 +77,7 @@ export const APP_CATALOG: CatalogItem[] = [
     category: 'app',
     type: 'CLI Tool',
     icon: 'terminal',
+    releaseStatus: 'comingSoon',
     links: [
       { label: 'View on GitHub', url: `${GITHUB_ORG}/igloo-shell` },
     ],
@@ -73,21 +91,9 @@ export const APP_CATALOG: CatalogItem[] = [
     category: 'app',
     type: 'Desktop App',
     icon: 'computer',
+    releaseStatus: 'comingSoon',
     links: [
       { label: 'View on GitHub', url: `${GITHUB_ORG}/igloo-home` },
-    ],
-  },
-  {
-    id: 'igloo-pwa',
-    title: 'Igloo PWA',
-    description:
-      'Browser-based application for running a FROSTR V2 node and managing shares and keysets.',
-    version: 'v2',
-    category: 'app',
-    type: 'Web App',
-    icon: 'globe',
-    links: [
-      { label: 'View on GitHub', url: `${GITHUB_ORG}/igloo-pwa` },
     ],
   },
   {
@@ -99,9 +105,34 @@ export const APP_CATALOG: CatalogItem[] = [
     category: 'app',
     type: 'Browser Extension',
     icon: 'puzzle',
+    releaseStatus: 'comingSoon',
     links: [
       { label: 'View on GitHub', url: `${GITHUB_ORG}/igloo-chrome` },
     ],
+  },
+  {
+    id: 'igloo-mobile-android',
+    title: 'Igloo Mobile for Android',
+    description:
+      'Planned Android host for FROSTR V2, bringing mobile share custody and signing workflows to Android devices.',
+    version: 'v2',
+    category: 'app',
+    type: 'Mobile App',
+    icon: 'smartphone',
+    releaseStatus: 'comingSoon',
+    links: [],
+  },
+  {
+    id: 'igloo-mobile-ios',
+    title: 'Igloo Mobile for iOS',
+    description:
+      'Planned iOS host for FROSTR V2, complementing the current V1 Igloo Signer with the new bifrost-rs stack.',
+    version: 'v2',
+    category: 'app',
+    type: 'Mobile App',
+    icon: 'smartphone',
+    releaseStatus: 'comingSoon',
+    links: [],
   },
   // --- V2 Libraries ---
   {
@@ -113,6 +144,7 @@ export const APP_CATALOG: CatalogItem[] = [
     category: 'library',
     type: 'Library',
     icon: 'library',
+    releaseStatus: 'released',
     links: [
       { label: 'View on GitHub', url: `${GITHUB_ORG}/bifrost-rs` },
     ],
@@ -126,6 +158,7 @@ export const APP_CATALOG: CatalogItem[] = [
     category: 'library',
     type: 'Library',
     icon: 'library',
+    releaseStatus: 'released',
     links: [
       { label: 'View on GitHub', url: `${GITHUB_ORG}/igloo-shared` },
     ],
@@ -139,6 +172,7 @@ export const APP_CATALOG: CatalogItem[] = [
     category: 'library',
     type: 'Library',
     icon: 'library',
+    releaseStatus: 'released',
     links: [
       { label: 'View on GitHub', url: `${GITHUB_ORG}/igloo-ui` },
     ],
