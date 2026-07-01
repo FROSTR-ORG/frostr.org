@@ -151,6 +151,11 @@
     @apply text-[13px] font-normal uppercase tracking-[0.08em] text-blue-300/80;
   }
 
+  .igloo-section-label-lg {
+    font-family: var(--font-mono);
+    @apply text-[15px] font-normal uppercase tracking-[0.08em] text-blue-300/90;
+  }
+
   .igloo-mono-data {
     @apply font-mono text-sm text-slate-200;
   }

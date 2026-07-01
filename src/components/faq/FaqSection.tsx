@@ -14,14 +14,14 @@ type FaqSectionProps = {
  */
 export function FaqSection({ section }: FaqSectionProps) {
   return (
-    <section id={section.id} className="space-y-4">
-      <div className="space-y-2">
+    <section id={section.id} className="space-y-5">
+      <div className="space-y-2.5">
         <SectionLabel>{section.title}</SectionLabel>
         {section.description && (
           <p className="igloo-body text-slate-400">{section.description}</p>
         )}
       </div>
-      <div className="space-y-2">
+      <div className="space-y-2.5">
         {section.items.map((item) => (
           <FaqItem key={item.id} item={item} />
         ))}

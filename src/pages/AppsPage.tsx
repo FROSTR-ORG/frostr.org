@@ -32,7 +32,7 @@ export function AppsPage() {
       <div className="space-y-8">
         <ProseLane>
           <div className="flex flex-wrap items-center gap-3">
-            <SectionLabel>FROSTR V2</SectionLabel>
+            <SectionLabel size="lg">FROSTR V2</SectionLabel>
             <Badge variant="info">Current stack</Badge>
             <Badge variant="success">Libraries released</Badge>
             <Badge variant="warning">Apps coming soon</Badge>
@@ -42,23 +42,25 @@ export function AppsPage() {
           label="Applications"
           description="PWA, Shell, Home, Chrome, Android, and iOS hosts are planned for the V2 app lineup."
           items={v2Apps}
+          introSize="lg"
         />
         <AppsSection
           label="Libraries"
           description="Released Rust core, shared runtime, and UI packages used by V2 hosts."
           items={v2Libraries}
+          introSize="lg"
         />
       </div>
 
       <div className="space-y-8 border-t border-slate-400/20 pt-10">
         <ProseLane>
           <div className="flex flex-wrap items-center gap-3">
-            <SectionLabel>FROSTR V1</SectionLabel>
+            <SectionLabel size="lg">FROSTR V1</SectionLabel>
             <Badge variant="default">Production / legacy</Badge>
           </div>
         </ProseLane>
         <ProseLane>
-          <p className="igloo-small -mt-4 text-slate-500">
+          <p className="igloo-body -mt-3 text-slate-400">
             Prior Igloo apps and TypeScript libraries; many remain actively used in production.
           </p>
         </ProseLane>
@@ -66,11 +68,13 @@ export function AppsPage() {
           label="Applications"
           description="Mobile, desktop, web, extension, and server signers on the original stack."
           items={v1Apps}
+          introSize="lg"
         />
         <AppsSection
           label="Libraries"
           description="JavaScript bifrost, igloo-core, and NIP-46 helpers."
           items={v1Libraries}
+          introSize="lg"
         />
       </div>
 

@@ -18,8 +18,8 @@ export function FaqPage() {
             <p className="igloo-body text-slate-400">{FAQ_INTRO}</p>
           </ProseLane>
         </CardHeader>
-        <CardContent className="space-y-8 pt-6">
-          <ProseLane>
+        <CardContent className="pt-7">
+          <ProseLane className="space-y-10">
             {FAQ_SECTIONS.map((section) => (
               <FaqSection key={section.id} section={section} />
             ))}
