@@ -7,11 +7,26 @@ import { cn } from '@/lib/utils';
 type ProseLaneProps = {
   children: React.ReactNode;
   className?: string;
+  maxWidth?: 'prose' | 'page';
 };
 
 /**
  * @param props.children - Prose or structured text blocks.
+ * @param props.maxWidth - Use "page" when copy should span the page column.
  */
-export function ProseLane({ children, className }: ProseLaneProps) {
-  return <div className={cn(getProseLaneClassName(), className)}>{children}</div>;
+export function ProseLane({
+  children,
+  className,
+  maxWidth = 'prose',
+}: ProseLaneProps) {
+  return (
+    <div
+      className={cn(
+        maxWidth === 'page' ? 'w-full max-w-full' : getProseLaneClassName(),
+        className,
+      )}
+    >
+      {children}
+    </div>
+  );
 }

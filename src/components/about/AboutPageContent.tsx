@@ -47,11 +47,11 @@ export function AboutPageContent() {
 
   return (
     <article className="w-full">
-      <ProseLane>
+      <ProseLane maxWidth="page">
         <header className="space-y-4">
           <h1 className="igloo-h1">{content.hero.title}</h1>
-          <p className="igloo-body text-slate-200">{content.hero.lead}</p>
-          <p className="igloo-body text-slate-400">{content.hero.disclaimer}</p>
+          <p className="igloo-body text-pretty text-slate-200">{content.hero.lead}</p>
+          <p className="igloo-body text-pretty text-slate-400">{content.hero.disclaimer}</p>
           <div className="flex flex-wrap gap-3">
             {content.hero.links.map((link) => (
               <a
