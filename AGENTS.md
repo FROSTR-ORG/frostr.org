@@ -30,7 +30,7 @@ Marketing site for FROSTR. Vite + React + TypeScript + **Igloo UI** (Paper desig
 - `src/data/media-catalog.ts` — Media page coverage items
 - `src/config/site.ts` — nav items, `ORG`, feature flags
 - `src/data/apps-catalog.ts` — Apps page catalog (V2 = frostr-infra submodules; demos = web-demo-v2 + web-demo)
-- `src/api/github.ts` — GraphQL fetch for Apps catalog repo metadata (optional; not used by About)
+- `src/api/github.ts` — Unauthenticated REST fetch for public Apps catalog repo metadata (optional; not used by About)
 - `src/data/privacy-policy.ts` — Privacy page (no FROSTR servers; App Store URL for Igloo Signer)
 - `src/data/faq.ts` — FAQ page content
 - `CONTEXT.md` — domain glossary; `docs/adr/0001-about-page-source-of-truth.md`
@@ -45,4 +45,4 @@ Marketing site for FROSTR. Vite + React + TypeScript + **Igloo UI** (Paper desig
 
 ## Environment
 
-- `VITE_GITHUB_API_KEY` — optional GitHub GraphQL token for Apps catalog repo metadata (not required for About page)
+- Browser metadata uses public GitHub endpoints without credentials. Vite exposes every referenced `VITE_*` value to visitors; never put GitHub tokens or other secrets in those variables. Keep the static Apps catalog usable when GitHub is unavailable or rate limited.
